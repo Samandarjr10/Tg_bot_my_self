@@ -5,6 +5,8 @@ const bot = new tgBot(TOKEN, {
     polling: true
 })
 
+bot.on("polling_error", console.log);
+
 bot.onText(/\/start/, msg => {
     const chatId = msg.chat.id
     bot.sendMessage(chatId, `Salom ${msg.from.first_name}, hush keldingiz !!`, {
